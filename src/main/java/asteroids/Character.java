@@ -9,13 +9,23 @@ import javafx.scene.shape.Shape;
 public abstract class Character {
     private Point2D movement;
     private Polygon character;
+    private boolean isAlive;
     
     public Character(Polygon polygon, int x, int y) {
         this.character = polygon;
         this.character.setTranslateX(x);
         this.character.setTranslateY(y);
+        this.isAlive = true;
         
         this.movement = new Point2D(0, 0);
+    }
+    
+    public void setAlive(boolean isAlive) {
+        this.isAlive = isAlive;
+    }
+    
+    public boolean isAlive() {
+        return this.isAlive;
     }
     
     public Polygon getCharacter() {
